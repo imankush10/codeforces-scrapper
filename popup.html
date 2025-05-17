@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codeforces Problem Extractor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 400px;
+      padding: 15px;
+    }
+    h1 {
+      font-size: 18px;
+      margin-top: 0;
+      color: #4285f4;
+    }
+    .section {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+      font-family: monospace;
+    }
+    input[type="number"] {
+      width: 60px;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    button.secondary {
+      background-color: #f1f1f1;
+      color: #333;
+    }
+    button.secondary:hover {
+      background-color: #e4e4e4;
+    }
+    button.danger {
+      background-color: #ea4335;
+    }
+    button.danger:hover {
+      background-color: #d33426;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: #f1f1f1;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .checkbox-container input {
+      margin-right: 8px;
+    }
+    .extracted-count {
+      font-weight: bold;
+      color: #4285f4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Codeforces Problem Extractor</h1>
+  
+  <div class="section">
+    <label for="problem-urls">Problem URLs (one per line):</label>
+    <textarea id="problem-urls" placeholder="https://codeforces.com/problemset/problem/4/A
+https://codeforces.com/problemset/problem/1/A"></textarea>
+    
+    <div class="checkbox-container">
+      <input type="checkbox" id="auto-extract" checked>
+      <label for="auto-extract">Automatically extract problems</label>
+    </div>
+    
+    <label for="rotation-interval">Rotation interval (seconds):</label>
+    <input type="number" id="rotation-interval" min="5" value="15">
+  </div>
+  
+  <div class="section">
+    <div class="controls">
+      <button id="start-rotation">Start Rotation</button>
+      <button id="stop-rotation" class="secondary">Stop Rotation</button>
+    </div>
+    <div id="rotation-status" class="status" style="display: none;"></div>
+  </div>
+  
+  <div class="section">
+    <div class="extracted-info">
+      <span>Extracted problems: </span>
+      <span id="extracted-count" class="extracted-count">0</span>
+    </div>
+    <div class="controls">
+      <button id="download-all" class="secondary">Download All Problems</button>
+      <button id="clear-all" class="danger">Clear All</button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

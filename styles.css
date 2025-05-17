@@ -1,0 +1,47 @@
+.cf-extractor-container {
+  margin: 15px 0;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.cf-extractor-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.cf-extractor-button:hover {
+  background-color: #45a049;
+}
+
+.cf-extractor-status {
+  font-size: 14px;
+  min-width: 200px;
+  text-align: left;
+}
+
+.cf-extractor-success {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.cf-extractor-error {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.cf-extractor-info {
+  color: #2196F3;
+  font-weight: bold;
+}
